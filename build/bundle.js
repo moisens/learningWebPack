@@ -40,7 +40,7 @@ module.exports = sum;
 /************************************************************************/
 (() => {
 const sum = __webpack_require__(1);
-const total = sum(4,4);
+const total = sum(10,4);
 
 console.log(total);
 
