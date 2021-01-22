@@ -1,4 +1,78 @@
 /******/ (() => { // webpackBootstrap
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: Cannot find module '@babel/core'\nRequire stack:\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/babel-loader/lib/index.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/loader-runner/lib/loadLoader.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/loader-runner/lib/LoaderRunner.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack/lib/NormalModule.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack/lib/NormalModuleFactory.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack/lib/Compiler.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack/lib/webpack.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack/lib/index.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack-cli/lib/webpack-cli.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack-cli/lib/bootstrap.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack-cli/bin/cli.js\n- /Users/moisensengiyumva/Desktop/learningWebPack/node_modules/webpack/bin/webpack.js\n babel-loader@8 requires Babel 7.x (the package '@babel/core'). If you'd like to use Babel 6.x ('babel-core'), you should install 'babel-loader@7'.\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:880:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:725:27)\n    at Module.require (internal/modules/cjs/loader.js:952:19)\n    at require (/Users/moisensengiyumva/Desktop/learningWebPack/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)\n    at Object.<anonymous> (/Users/moisensengiyumva/Desktop/learningWebPack/node_modules/babel-loader/lib/index.js:10:11)\n    at Module._compile (/Users/moisensengiyumva/Desktop/learningWebPack/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)\n    at Module.load (internal/modules/cjs/loader.js:928:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:769:14)\n    at Module.require (internal/modules/cjs/loader.js:952:19)");
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ([
+/* 0 */,
+/* 1 */
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+var sum = function sum(a, b) {
+  return a + b;
+};
+
+exports.default = sum;
+
+//Commonjs
+//module.exports = sum;
+
+/***/ }),
+/* 2 */
+/***/ (() => {
+
+
+
+var image = document.createElement('img');
+image.src = 'https://picsum.photos/200/300';
+
+document.body.appendChild(image);
+
+/***/ })
+/******/ 	]);
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+(() => {
+
+
+var _sum = __webpack_require__(1);
+
+var _sum2 = _interopRequireDefault(_sum);
+
+__webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//const sum = require('./sum'); //Common js
+var total = (0, _sum2.default)(10, 4);
+
+console.log(total);
+})();
+
 /******/ })()
 ;
