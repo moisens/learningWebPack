@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/Moise-code/learningWebPack#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
     "webpack": "^5.16.0",
     "webpack-cli": "^4.4.0"
   }
