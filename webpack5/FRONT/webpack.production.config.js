@@ -27,7 +27,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg)/,
+        test: /\.(png|jpg)$/,
         type: 'asset/resource'//asset/inline can increase the size of the file. It generate index base 64 in the bundle js 
       },
       {
