@@ -2,16 +2,14 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-    entry: {
-        'hello-world': './src/hello-world.js',
-        'kiwi': './src/kiwi.js',
-    },
+    entry: './src/hello-world.js',
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/static/'
+        publicPath: 'http://localhost:9001/'
     },
     mode: 'production',
     optimization: {
@@ -23,25 +21,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.(png|jpg)$/,
-                type: 'asset',
-                parser: {
-                    dataUrlCondition: {
-                        maxSize: 3 * 1024
-                    }
-                }
-            },
-            {
-                test: /\.txt/,
-                type: 'asset/source'
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader'
-                ]
-            },
             {
                 test: /\.scss$/,
                 use: [
@@ -74,17 +53,16 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: 'hello-world.html',
-            chunks: ['hello-world'],
             title: 'Hello world',
-            description: 'some description',
+            description: 'Hello world',
             template: 'src/page-template.hbs'
         }),
-        new HtmlWebpackPlugin({
-            filename: 'kiwi.html',
-            chunks: ['kiwi'],
-            title: 'Kiwi',
-            description: 'Kiwi',
-            template: 'src/page-template.hbs'
+        new ModuleFederationPlugin({
+            name: 'HelloWorldApp',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './HelloWorldButton': './src/components/hello-world-button/hello-world-button.js'
+            }
         })
     ]
 };

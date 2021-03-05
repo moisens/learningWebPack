@@ -1,0 +1,18 @@
+$font-size: 20px;
+$button-bck-colour: rgb(1, 105, 100);
+$btn-font-colour: #fff;
+$color-text: #ff1e00;
+
+.hello-world-button{
+  font-size: $font-size;
+  padding: 7px 15px;
+  background-color: $button-bck-colour;
+  color: $btn-font-colour;
+  outline: none;
+}
+
+.hello-world-text{
+  color: $color-text;
+  font-weight: bold;
+
+}
